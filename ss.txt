@@ -1,0 +1,18 @@
+#Import Library
+import qrcode
+#Generate QR Code
+#img=qrcode.make('Abhyudaya naam h mera kya abhyudaya')
+#img.save('hello.png')
+
+
+qr = qrcode.QRCode(
+    version=1,
+    #error_correction=qrcode.constants.ERROR_CORRECT_L,
+    box_size=10,
+    border=6,
+)
+qr.add_data(" my name is Dev"     ) 
+qr.make(fit=True)
+#img=qrcode.make('Abhyudaya')
+img=qr.make_image(fill_color="black", back_color="white")
+img.save("abhyudaya.png")
